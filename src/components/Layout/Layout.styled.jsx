@@ -14,19 +14,6 @@ export const StyledLink = styled(NavLink)`
   text-decoration: none;
 `;
 
-export const StyledCartIcon = styled(IoMdCart)`
-  color: black;
-  z-index: 1;
-  font-size: 2em;
-`;
-
-export const StyledIconWrapper = styled.div`
-  padding: 1.3rem;
-  border-radius: 50%;
-  background: white;
-  cursor: pointer;
-`;
-
 export const StyledLogo = styled(Link)`
   font-size: 4rem;
   font-weight: bolder;

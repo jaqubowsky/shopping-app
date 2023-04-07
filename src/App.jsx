@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import Layout from "./components/Layout/Layout";
 import Home from "./pages/Home/Home";
-import Products from "./pages/Products/Products";
+import Products, { loader as productsLoader } from "./pages/Products/Products";
 import Contact from "./pages/Contact/Contact";
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
     createRoutesFromElements(
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
-        <Route index path="products" element={<Products />} />
+        <Route index path="products" loader={productsLoader} element={<Products />} />
         <Route index path="contact" element={<Contact />} />
       </Route>
     )

@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-
+import { useState } from "react";
 import {
   StyledHeader,
   StyledLink,
@@ -7,9 +7,16 @@ import {
   StyledLinksWrapper,
   StyledLogo
 } from "./Layout.styled";
-import CartButton from "../Cart/CartButton.jsx";
+import OpenCartButton from "../Cart/OpenCartButton";
+import CartModal from "../Cart/CartModal";
 
 function Layout() {
+  const [isCartOpen, setIsCartOpen] = useState(false);
+
+  const openCart = () => {
+    setIsCartOpen((prevState) => !prevState);
+  };
+
   return (
     <>
       <StyledHeader>
@@ -19,11 +26,12 @@ function Layout() {
             <StyledLink to="/">Home</StyledLink>
             <StyledLink to="products">Products</StyledLink>
             <StyledLink to="contact">Contact</StyledLink>
-            <CartButton />
+            <OpenCartButton handleOpenCart={openCart} />
           </StyledLinksWrapper>
         </StyledNav>
       </StyledHeader>
       <Outlet />
+      <CartModal isOpen={isCartOpen} handleOpenCart={openCart} />
     </>
   );
 }

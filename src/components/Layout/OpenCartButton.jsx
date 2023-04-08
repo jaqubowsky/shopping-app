@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { StyledCartButton, StyledCartIcon } from "./OpenCartButton.styled";
+import { StyledCartButton, StyledCartIcon } from "./OpenCartButton.styled.jsx";
 
 export default function OpenCartButton({ handleOpenCart }) {
   return (

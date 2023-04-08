@@ -1,15 +1,25 @@
 import PropTypes from "prop-types";
-import { StyledCart, ButtonWrapper } from "./Cart.styled";
+import { useContext } from "react";
+import CartProduct from "./CartProduct";
+import { StyledCart, StyledButtonWrapper, StyledCartElementsWrapper } from "./Cart.styled";
+import CartContext from "./CartContext";
 import Button from "../Button/Button";
 
 export default function Cart({ handleClick, handleCheckout, handleCloseModal }) {
+  const { cartItems } = useContext(CartContext);
+
+  const cartEls = cartItems.map((product) => (
+    <CartProduct img={product.image} price={product.price} title={product.title} />
+  ));
+
   return (
     <StyledCart onClick={handleClick}>
       <h2>Your shopping cart</h2>
-      <ButtonWrapper>
+      <StyledCartElementsWrapper>{cartEls}</StyledCartElementsWrapper>
+      <StyledButtonWrapper>
         <Button color="red" handleClick={handleCloseModal} name="Close" />
         <Button color="#ffb840" handleClick={handleCheckout} name="Checkout" />
-      </ButtonWrapper>
+      </StyledButtonWrapper>
     </StyledCart>
   );
 }

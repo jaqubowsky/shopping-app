@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { IoMdCart } from "react-icons/io";
 import { Link, NavLink } from "react-router-dom";
 
 export const StyledHeader = styled.header`

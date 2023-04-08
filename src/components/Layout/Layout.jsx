@@ -7,7 +7,7 @@ import {
   StyledLinksWrapper,
   StyledLogo
 } from "./Layout.styled";
-import OpenCartButton from "../Cart/OpenCartButton";
+import OpenCartButton from "./OpenCartButton.jsx";
 import CartModal from "../Cart/CartModal";
 
 function Layout() {

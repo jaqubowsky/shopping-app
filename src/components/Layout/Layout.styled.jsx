@@ -2,8 +2,10 @@ import styled from "styled-components";
 import { Link, NavLink } from "react-router-dom";
 
 export const StyledHeader = styled.header`
-  background: #060606;
-  padding: 2em;
+  position: sticky;
+  top: 0;
+  background: #252525;
+  padding: 0.875em;
 `;
 
 export const StyledLink = styled(NavLink)`
@@ -34,4 +36,9 @@ export const StyledLinksWrapper = styled.div`
   & > * {
     margin: auto 2rem;
   }
+`;
+
+export const StyledMain = styled.div`
+  margin: auto;
+  text-align: center;
 `;

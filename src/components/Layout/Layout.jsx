@@ -5,7 +5,8 @@ import {
   StyledLink,
   StyledNav,
   StyledLinksWrapper,
-  StyledLogo
+  StyledLogo,
+  StyledMain
 } from "./Layout.styled";
 import OpenCartButton from "./OpenCartButton.jsx";
 import CartModal from "../Cart/CartModal";
@@ -30,7 +31,9 @@ function Layout() {
           </StyledLinksWrapper>
         </StyledNav>
       </StyledHeader>
-      <Outlet />
+      <StyledMain>
+        <Outlet />
+      </StyledMain>
       <CartModal isOpen={isCartOpen} handleOpenCart={openCart} />
     </>
   );

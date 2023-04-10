@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 const StyledProductsWrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 30%));
+  gap: 4rem;
   width: 80%;
-  gap: 2em;
+  margin: 4rem auto;
 `;
 
 export default StyledProductsWrapper;

@@ -1,9 +1,9 @@
+import React, { Suspense } from "react";
 import { defer, useLoaderData, Await } from "react-router-dom";
-import { Suspense, useContext } from "react";
 import StyledProductsWrapper from "./Products.styled";
 import getProducts from "../../api";
 import ProductCard from "./ProductCard";
-import CartContext from "../../components/Cart/CartContext";
+import { useCart } from "../../context/CartContext";
 
 export async function loader() {
   return defer({
@@ -11,10 +11,9 @@ export async function loader() {
   });
 }
 
-export default function Products() {
+function Products() {
   const productsData = useLoaderData();
-
-  const { updateCartItems } = useContext(CartContext);
+  const { addItemQuantity } = useCart();
 
   function renderProducts(products) {
     return products.map((product) => (
@@ -24,7 +23,7 @@ export default function Products() {
         name={product.title}
         price={product.price}
         img={product.image}
-        handleUpdateCart={() => updateCartItems(product)}
+        handleUpdateCart={() => addItemQuantity(product)}
       />
     ));
   }
@@ -37,3 +36,5 @@ export default function Products() {
     </Suspense>
   );
 }
+
+export default Products;

@@ -19,6 +19,11 @@ export const StyledCartElementsWrapper = styled.div`
   gap: 3em;
 `;
 
+export const CartTitle = styled.div`
+  font-size: 3rem;
+  margin-bottom: 1em;
+`;
+
 export const StyledButtonWrapper = styled.div`
   display: flex;
   flex-direction: column;

@@ -31,6 +31,7 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     font-family: Karla, sans-serif;
+    background: #FBFAF5;
   }
 
   /*

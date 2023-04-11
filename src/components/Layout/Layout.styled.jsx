@@ -48,7 +48,8 @@ export const StyledLinksWrapper = styled.div`
   }
 `;
 
-export const StyledMain = styled.div`
-  margin: auto;
+export const StyledMain = styled.main`
+  margin: 0 auto;
+  width: 80%;
   text-align: center;
 `;

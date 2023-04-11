@@ -10,6 +10,7 @@ import Home from "./pages/Home/Home";
 import Products, { loader as productsLoader } from "./pages/Products/Products";
 import Contact from "./pages/Contact/Contact";
 import { CartProvider } from "./context/CartContext";
+import { GlobalStyle, Theme } from "./styles/index";
 
 function App() {
   const routes = useMemo(
@@ -28,7 +29,10 @@ function App() {
 
   return (
     <CartProvider>
-      <RouterProvider router={router} />
+      <Theme>
+        <GlobalStyle />
+        <RouterProvider router={router} />
+      </Theme>
     </CartProvider>
   );
 }

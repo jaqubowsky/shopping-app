@@ -18,9 +18,9 @@ function CartProduct({ img, title, price, quantity, handleAddQuantity, handleDec
         <h3>{truncate(title, 15)}</h3>
         <StyledPrice>{`$${(price * quantity).toFixed(2)}`}</StyledPrice>
         <StyledQuantityWrapper>
-          <Button name="-" handleClick={handleDecreaseQuantity} color="grey" />
+          <Button quantity name="-" handleClick={handleDecreaseQuantity} />
           <StyledQuantity>{quantity}</StyledQuantity>
-          <Button name="+" handleClick={handleAddQuantity} color="grey" />
+          <Button quantity name="+" handleClick={handleAddQuantity} />
         </StyledQuantityWrapper>
       </StyledDescriptionWrapper>
     </StyledCartProductWrapper>

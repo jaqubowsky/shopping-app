@@ -20,7 +20,7 @@ export default function ProductCard({ name, price, img, handleUpdateCart }) {
           <h2>{name}</h2>
           <StyledPrice>${price}</StyledPrice>
         </StyledDescription>
-        <Button name="Add to cart" color="black" handleClick={handleUpdateCart} />
+        <Button name="Add to cart" handleClick={handleUpdateCart} />
       </StyledUtils>
     </StyledProductCardWrapper>
   );

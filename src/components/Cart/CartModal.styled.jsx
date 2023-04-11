@@ -8,7 +8,7 @@ const StyledCartModalBackground = styled(motion.div)`
   top: 0;
   left: 0;
   z-index: 9998;
-  background: rgba(0, 0, 0, 0.4);
+  background: ${(props) => props.theme.colors.mainModal};
 `;
 
 export default StyledCartModalBackground;

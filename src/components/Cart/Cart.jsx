@@ -29,8 +29,8 @@ export default function Cart({ handleClick, handleCheckout, handleCloseModal }) 
       <CartTitle>Your shopping cart</CartTitle>
       <StyledCartElementsWrapper>{cartEls}</StyledCartElementsWrapper>
       <StyledButtonWrapper>
-        <Button color="red" handleClick={handleCloseModal} name="Close" />
-        <Button color="#ffb840" handleClick={handleCheckout} name="Checkout" />
+        <Button close handleClick={handleCloseModal} name="Close" />
+        <Button checkout handleClick={handleCheckout} name="Checkout" />
       </StyledButtonWrapper>
     </StyledCart>
   );

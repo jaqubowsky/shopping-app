@@ -26,11 +26,11 @@ export const StyledImage = styled.img`
 export const StyledQuantity = styled.span`
   font-size: 1.1rem;
   font-weight: bolder;
-  color: #222222;
+  color: ${(props) => props.theme.colors.mainNav};
 `;
 
 export const StyledPrice = styled.h4`
-  color: #222222;
+  color: ${(props) => props.theme.colors.mainNav};
 `;
 
 export const StyledQuantityWrapper = styled.div`

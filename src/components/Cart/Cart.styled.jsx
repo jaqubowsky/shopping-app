@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 export const StyledCart = styled(motion.div)`
   position: absolute;
   right: 0;
-  background: white;
+  background: ${(props) => props.theme.colors.mainWhite};
   width: 700px;
   max-width: 30%;
   padding: 2em;

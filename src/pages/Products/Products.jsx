@@ -1,8 +1,9 @@
 import React, { Suspense } from "react";
 import { defer, useLoaderData, Await } from "react-router-dom";
 import StyledProductsWrapper from "./Products.styled";
-import getProducts from "../../api";
+import getProducts from "../../api/api";
 import ProductCard from "./ProductCard";
+import Loader from "../../components/spinner";
 import { useCart } from "../../context/CartContext";
 
 export async function loader() {
@@ -29,7 +30,7 @@ function Products() {
   }
 
   return (
-    <Suspense fallback={<h1>Loading...</h1>}>
+    <Suspense fallback={<Loader />}>
       <StyledProductsWrapper>
         <Await resolve={productsData.products}>{renderProducts}</Await>
       </StyledProductsWrapper>

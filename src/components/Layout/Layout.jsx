@@ -8,7 +8,7 @@ import {
   StyledLogo,
   StyledMain
 } from "./Layout.styled";
-import OpenCartButton from "./OpenCartButton.jsx";
+import OpenCartButton from "./OpenCartButton";
 import CartModal from "../Cart/CartModal";
 
 function Layout() {

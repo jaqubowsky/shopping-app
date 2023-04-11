@@ -1,6 +1,7 @@
-import React, { Suspense } from "react";
-import { defer, useLoaderData, Await } from "react-router-dom";
-import StyledProductsWrapper from "./Products.styled";
+import React, { Suspense, useState } from "react";
+import { defer, useLoaderData, Await, useSearchParams } from "react-router-dom";
+import { StyledProductsWrapper, StyledCategoryWrapper } from "./Products.styled";
+import Category from "./Category";
 import getProducts from "../../api/api";
 import ProductCard from "./ProductCard";
 import Loader from "../../components/spinner";
@@ -15,9 +16,33 @@ export async function loader() {
 function Products() {
   const productsData = useLoaderData();
   const { addItemQuantity } = useCart();
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const categoryFilter = searchParams.get("category");
+
+  function filterProducts(products) {
+    return categoryFilter
+      ? products.filter((product) => product.category === categoryFilter)
+      : products;
+  }
+
+  function renderCategories(products) {
+    const uniqueCategories = [...new Set(products.map((product) => product.category))];
+
+    return uniqueCategories.map((category) => (
+      <Category
+        key={category}
+        isActive={category === categoryFilter}
+        name={category}
+        handleClick={() => setSearchParams({ category })}
+      />
+    ));
+  }
 
   function renderProducts(products) {
-    return products.map((product) => (
+    const filteredProducts = filterProducts(products);
+
+    return filteredProducts.map((product) => (
       <ProductCard
         item={product}
         key={product.id}
@@ -31,6 +56,14 @@ function Products() {
 
   return (
     <Suspense fallback={<Loader />}>
+      <Await resolve={productsData.products}>
+        {(products) => (
+          <StyledCategoryWrapper>
+            {renderCategories(products)}
+            <Category name="Clear filters" handleClick={() => setSearchParams({})} />
+          </StyledCategoryWrapper>
+        )}
+      </Await>
       <StyledProductsWrapper>
         <Await resolve={productsData.products}>{renderProducts}</Await>
       </StyledProductsWrapper>

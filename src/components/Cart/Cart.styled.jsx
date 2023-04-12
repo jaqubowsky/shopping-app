@@ -11,6 +11,7 @@ export const StyledCart = styled(motion.div)`
   height: 100vh;
   z-index: 9999;
   text-align: center;
+  overflow: auto;
 `;
 
 export const StyledCartElementsWrapper = styled.div`

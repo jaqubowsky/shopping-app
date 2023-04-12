@@ -1,15 +1,21 @@
-import React, { Suspense, useState } from "react";
+import React, { Suspense } from "react";
 import { defer, useLoaderData, Await, useSearchParams } from "react-router-dom";
 import { StyledProductsWrapper, StyledCategoryWrapper } from "./Products.styled";
 import Category from "./Category";
 import getProducts from "../../api/api";
 import ProductCard from "./ProductCard";
-import Loader from "../../components/spinner";
+import Loader from "../../components/Loader/Loader";
 import { useCart } from "../../context/CartContext";
 
 export async function loader() {
+  const loadingTime = 1500;
+
   return defer({
-    products: getProducts()
+    products: new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(getProducts());
+      }, loadingTime);
+    })
   });
 }
 

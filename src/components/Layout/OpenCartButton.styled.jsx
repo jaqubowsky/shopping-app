@@ -9,7 +9,7 @@ export const StyledCartIcon = styled(IoMdCart)`
 
 export const StyledCartButton = styled.button`
   position: relative;
-  padding: 1.3rem;
+  padding: 2em;
   border-radius: 50%;
   background: ${(props) => props.theme.colors.mainWhite};
   cursor: pointer;
@@ -21,13 +21,23 @@ export const StyledItemNumber = styled.span`
   display: flex;
   align-items: center;
   justify-content: center;
-  left: 0;
-  bottom: 0.1px;
+  left: -5px;
+  bottom: -5px;
   color: ${(props) => props.theme.colors.mainNav};
   border-radius: 50%;
   background: ${(props) => props.theme.colors.mainYellow};
-  width: 10px;
-  height: 10px;
-  padding: 0.9rem;
+  padding: 0.3em 0.8em;
   font-weight: bolder;
+  font-size: 0.8rem;
+
+  @media (min-width: ${({ theme }) => theme.media.tablet}) {
+    font-size: 1rem;
+  }
+  @media (min-width: ${({ theme }) => theme.media.laptop}) {
+    font-size: 1.1rem;
+  }
+
+  @media (min-width: ${({ theme }) => theme.media.laptopL}) {
+    font-size: 1.2rem;
+  }
 `;

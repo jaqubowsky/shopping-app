@@ -13,7 +13,14 @@ const theme = {
     mainRed: "#ff2e2e",
     mainRedHover: "#FF2E2EE5",
     mainBorder: "E5E5E5FF",
-    mainHover: "#252525e4"
+    mainHover: "#252525e4",
+    mainPrice: "#222222"
+  },
+  media: {
+    mobile: "375px",
+    tablet: "768px",
+    laptop: "1024px",
+    laptopL: "1440px"
   }
 };
 

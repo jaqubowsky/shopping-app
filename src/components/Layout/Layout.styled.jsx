@@ -5,13 +5,14 @@ export const StyledHeader = styled.header`
   position: sticky;
   top: 0;
   background: ${(props) => props.theme.colors.mainNav};
-  padding: 0.875em;
+  padding: 0.8em 0.2em;
+  z-index: 9998;
 `;
 
 export const StyledLink = styled(NavLink)`
   margin: auto 0;
   color: ${(props) => props.theme.colors.mainWhite};
-  font-size: 2rem;
+  font-size: 2em;
   text-decoration: none;
 
   &.active {
@@ -27,14 +28,28 @@ export const StyledLink = styled(NavLink)`
 
 export const StyledNav = styled.nav`
   display: flex;
+  flex-direction: column;
   margin: 0 auto;
   justify-content: space-between;
   align-items: center;
-  width: 80%;
+  width: 90%;
+  font-size: 0.6rem;
+
+  @media (min-width: ${({ theme }) => theme.media.tablet}) {
+    font-size: 0.75rem;
+  }
+
+  @media (min-width: ${({ theme }) => theme.media.laptop}) {
+    flex-direction: row;
+  }
+
+  @media (min-width: ${({ theme }) => theme.media.laptopL}) {
+    font-size: 1rem;
+  }
 `;
 
 export const StyledLogo = styled(Link)`
-  font-size: 4rem;
+  font-size: 5em;
   font-weight: bolder;
   color: ${(props) => props.theme.colors.mainYellow};
   text-decoration: none;
@@ -42,9 +57,12 @@ export const StyledLogo = styled(Link)`
 
 export const StyledLinksWrapper = styled.div`
   display: flex;
+  justify-content: space-between;
+  width: 90%;
 
-  & > * {
-    margin: auto 2rem;
+  @media (min-width: ${({ theme }) => theme.media.laptop}) {
+    display: flex;
+    width: 50%;
   }
 `;
 
@@ -52,4 +70,8 @@ export const StyledMain = styled.main`
   margin: 0 auto;
   width: 80%;
   text-align: center;
+
+  @media (min-width: ${({ theme }) => theme.media.laptop}) {
+    font-size: 1.3rem;
+  }
 `;

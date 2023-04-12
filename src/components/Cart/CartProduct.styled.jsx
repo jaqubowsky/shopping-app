@@ -2,11 +2,9 @@ import styled from "styled-components";
 
 export const StyledCartProductWrapper = styled.div`
   display: flex;
-  gap: 3em;
+  justify-content: space-between;
+  width: 100%;
   flex-direction: row;
-  justify-content: flex-start;
-  align-content: center;
-  width: 90%;
   margin: 0 auto 3em auto;
 `;
 
@@ -15,12 +13,11 @@ export const StyledDescriptionWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  gap: 0.5em;
+  width: 50%;
 `;
 
 export const StyledImage = styled.img`
   width: 100px;
-  height: 100%;
 `;
 
 export const StyledQuantity = styled.span`

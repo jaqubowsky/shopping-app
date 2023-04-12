@@ -44,8 +44,29 @@ const StyledButton = styled.button`
         background: ${(props) => props.theme.colors.mainGreyHover};
       }
     `}
+  ${({ disabled }) =>
+    disabled &&
+    css`
+      cursor: not-allowed;
+      background: ${(props) => props.theme.colors.mainGrey};
+
+      &:hover {
+        background: ${(props) => props.theme.colors.mainGreyHover};
+      }
+    `}
   &:active {
     transform: translateY(1px);
+  }
+
+  @media (min-width: ${({ theme }) => theme.media.tablet}) {
+    font-size: 0.8rem;
+  }
+  @media (min-width: ${({ theme }) => theme.media.laptop}) {
+    font-size: 1rem;
+  }
+
+  @media (min-width: ${({ theme }) => theme.media.laptopL}) {
+    font-size: 1.2em;
   }
 `;
 

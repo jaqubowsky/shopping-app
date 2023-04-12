@@ -1,9 +1,14 @@
 import PropTypes from "prop-types";
 import StyledButton from "./Button.styled";
 
-export default function Button({ handleClick, name, checkout, close, quantity }) {
+export default function Button({ handleClick, name, checkout, close, quantity, disabled }) {
   return (
-    <StyledButton close={close} checkout={checkout} quantity={quantity} onClick={handleClick}>
+    <StyledButton
+      disabled={disabled}
+      close={close}
+      checkout={checkout}
+      quantity={quantity}
+      onClick={handleClick}>
       {name}
     </StyledButton>
   );

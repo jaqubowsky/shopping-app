@@ -27,9 +27,9 @@ export default function Cart({ handleClick, handleCheckout, handleCloseModal }) 
   return (
     <StyledCart onClick={handleClick}>
       <CartTitle>Your shopping cart</CartTitle>
-      <StyledCartElementsWrapper>{cartEls}</StyledCartElementsWrapper>
+      {cartEls.length > 0 && <StyledCartElementsWrapper>{cartEls}</StyledCartElementsWrapper>}
       <StyledButtonWrapper>
-        <Button checkout handleClick={handleCheckout} name="Checkout" />
+        <Button disabled={cartEls <= 0} checkout handleClick={handleCheckout} name="Checkout" />
         <Button close handleClick={handleCloseModal} name="Close" />
       </StyledButtonWrapper>
     </StyledCart>
